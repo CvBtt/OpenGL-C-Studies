@@ -29,14 +29,15 @@ int main()
     // Inicializa o OpenGL
     gladLoadGL();
 
-    // Define a cor do buffer
-    glClearColor(0.0f, 0.55f, 0.12f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glfwSwapBuffers(window);
 
     // Define as dimensões da janela
     glViewport(0, 0, 800, 800);
-
+    
+    //Cores
+    glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glfwSwapBuffers(window);
+        
     // Mantém a janela aberta até que seja fechada
     while (!glfwWindowShouldClose(window))
     {

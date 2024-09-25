@@ -10,7 +10,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Abobrinha", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Abobrinha", NULL, NULL);
 
     if (window == NULL)
     {
@@ -20,6 +20,14 @@ int main()
     }
 
     glfwMakeContextCurrent(window);
+
+    gladLoadGL();
+
+    glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glfwSwapBuffers(window);
+
+    glViewport(0, 0, 800, 800);
 
     while (!glfwWindowShouldClose(window))
     {

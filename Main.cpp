@@ -2,6 +2,18 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+const char* vertexShaderSource = "#version 330 core\n"
+"layout (location =0) in vec3 aPos;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0"
+const char* fragmentShaderSource = "#version 330 core\n"
+"void main()\n"
+"{\n"
+"   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
+"}\n\0"
+
 int main()
 {
     // Marca o início do GLFW
@@ -36,7 +48,7 @@ int main()
     //Cores
     glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    glfwSwapBuffers(window);
+    glfwSwapBuffers(window); 
         
     // Mantém a janela aberta até que seja fechada
     while (!glfwWindowShouldClose(window))
